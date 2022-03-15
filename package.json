@@ -13,7 +13,9 @@
   "bugs": {
     "url": "https://github.com/rickkky/leetcode-tour/issues"
   },
-  "scripts": {},
+  "scripts": {
+    "prepare": "husky install"
+  },
   "dependencies": {
     "typescript": "^4.6.2"
   },
