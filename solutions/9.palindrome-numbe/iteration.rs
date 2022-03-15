@@ -10,15 +10,12 @@ impl Solution {
     if x < 0 {
       return false;
     }
-
     let mut reversed = 0;
     let mut quotient = x;
-
     while quotient > 0 {
       reversed = reversed * 10 + quotient  % 10;
       quotient /= 10;
     }
-
     reversed == x
   }
 }
