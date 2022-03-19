@@ -1,29 +1,29 @@
 {
-  "name": "leetcode-tour",
-  "author": "ricky <rickkkkkkkkky@foxmail.com>",
-  "description": "leetcode solutions",
-  "keywords": [
-    "leetcode"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rickkky/leetcode-tour.git"
-  },
-  "homepage": "https://github.com/rickkky/leetcode-tour",
-  "bugs": {
-    "url": "https://github.com/rickkky/leetcode-tour/issues"
-  },
-  "scripts": {
-    "prepare": "husky install"
-  },
-  "dependencies": {
-    "typescript": "^4.6.2"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^16.2.1",
-    "@commitlint/config-conventional": "^16.2.1",
-    "husky": "^7.0.0",
-    "prettier": "2.5.1",
-    "pretty-quick": "^3.1.3"
-  }
+    "name": "leetcode-tour",
+    "description": "leetcode solutions",
+    "keywords": [
+        "leetcode"
+    ],
+    "author": "ricky <rickkkkkkkkky@foxmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rickkky/leetcode-tour.git"
+    },
+    "homepage": "https://github.com/rickkky/leetcode-tour",
+    "bugs": {
+        "url": "https://github.com/rickkky/leetcode-tour/issues"
+    },
+    "scripts": {
+        "prepare": "husky install"
+    },
+    "dependencies": {
+        "typescript": "^4.6.2"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^16.2.1",
+        "@commitlint/config-conventional": "^16.2.1",
+        "husky": "^7.0.0",
+        "prettier": "2.5.1",
+        "pretty-quick": "^3.1.3"
+    }
 }
