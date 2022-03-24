@@ -10,10 +10,12 @@ function twoSum(nums: number[], target: number): number[] {
     for (const [i, num] of nums.entries()) {
         const diff = target - num;
         if (map.has(diff)) {
-            return [map.get(diff), i];
+            return [map.get(diff) as number, i];
         }
         map.set(num, i);
     }
     return [];
 }
 // @lc code=end
+
+export default twoSum;

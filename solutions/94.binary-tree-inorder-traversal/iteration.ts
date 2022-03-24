@@ -19,19 +19,21 @@ class TreeNode {
 }
 
 // @lc code=start
-export function inorderTraversal(root: TreeNode | null): number[] {
+function inorderTraversal(root: TreeNode | null): number[] {
     const stack: TreeNode[] = [];
-    const result: number[] = [];
-    let node: TreeNode | null = root;
-    while (node || stack.length > 0) {
-        while (node) {
-            stack.push(node);
-            node = node.left;
+    const seqences: number[] = [];
+    let current: TreeNode | null = root;
+    while (current || stack.length > 0) {
+        while (current) {
+            stack.push(current);
+            current = current.left;
         }
-        node = stack.pop() as TreeNode;
-        result.push(node.val);
-        node = node.right;
+        current = stack.pop() as TreeNode;
+        seqences.push(current.val);
+        current = current.right;
     }
-    return result;
+    return seqences;
 }
 // @lc code=end
+
+export default inorderTraversal;

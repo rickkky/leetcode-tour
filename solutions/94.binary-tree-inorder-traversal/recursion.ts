@@ -19,18 +19,20 @@ class TreeNode {
 }
 
 // @lc code=start
-function inorderTraversalRecursive(root: TreeNode | null, result: number[]) {
+function inorderTraversalRecursive(root: TreeNode | null, seqences: number[]) {
     if (!root) {
         return;
     }
-    inorderTraversalRecursive(root.left, result);
-    result.push(root.val);
-    inorderTraversalRecursive(root.right, result);
+    inorderTraversalRecursive(root.left, seqences);
+    seqences.push(root.val);
+    inorderTraversalRecursive(root.right, seqences);
 }
 
 function inorderTraversal(root: TreeNode | null): number[] {
-    const result: number[] = [];
-    inorderTraversalRecursive(root, result);
-    return result;
+    const seqences: number[] = [];
+    inorderTraversalRecursive(root, seqences);
+    return seqences;
 }
 // @lc code=end
+
+export default inorderTraversal;

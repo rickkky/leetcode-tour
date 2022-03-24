@@ -18,3 +18,5 @@ function isPalindrome(x: number): boolean {
     return reversed === x;
 }
 // @lc code=end
+
+export default isPalindrome;
