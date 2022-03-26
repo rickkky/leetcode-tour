@@ -20,8 +20,8 @@ class TreeNode {
 
 // @lc code=start
 function inorderTraversal(root: TreeNode | null): number[] {
+    const sequences: number[] = [];
     const stack: TreeNode[] = [];
-    const seqences: number[] = [];
     let current: TreeNode | null = root;
     while (current || stack.length > 0) {
         while (current) {
@@ -29,10 +29,10 @@ function inorderTraversal(root: TreeNode | null): number[] {
             current = current.left;
         }
         current = stack.pop() as TreeNode;
-        seqences.push(current.val);
+        sequences.push(current.val);
         current = current.right;
     }
-    return seqences;
+    return sequences;
 }
 // @lc code=end
 

@@ -19,19 +19,22 @@ class TreeNode {
 }
 
 // @lc code=start
-function preorderTraversalRecursive(root: TreeNode | null, seqences: number[]) {
+function preorderTraversalRecursive(
+    root: TreeNode | null,
+    sequences: number[],
+) {
     if (!root) {
         return;
     }
-    seqences.push(root.val);
-    preorderTraversalRecursive(root.left, seqences);
-    preorderTraversalRecursive(root.right, seqences);
+    sequences.push(root.val);
+    preorderTraversalRecursive(root.left, sequences);
+    preorderTraversalRecursive(root.right, sequences);
 }
 
 function preorderTraversal(root: TreeNode | null): number[] {
-    const seqences: number[] = [];
-    preorderTraversalRecursive(root, seqences);
-    return seqences;
+    const sequences: number[] = [];
+    preorderTraversalRecursive(root, sequences);
+    return sequences;
 }
 // @lc code=end
 
