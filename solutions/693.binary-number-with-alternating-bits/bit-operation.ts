@@ -11,4 +11,4 @@ function hasAlternatingBits(n: number): boolean {
 }
 // @lc code=end
 
-export default hasAlternatingBits;
+export {};

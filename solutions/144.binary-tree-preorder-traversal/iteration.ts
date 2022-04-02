@@ -36,4 +36,4 @@ function preorderTraversal(root: TreeNode | null): number[] {
 }
 // @lc code=end
 
-export default preorderTraversal;
+export {};

@@ -28,4 +28,4 @@ function selfDividingNumbers(left: number, right: number): number[] {
 }
 // @lc code=end
 
-export default selfDividingNumbers;
+export {};

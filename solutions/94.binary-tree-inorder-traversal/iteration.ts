@@ -36,4 +36,4 @@ function inorderTraversal(root: TreeNode | null): number[] {
 }
 // @lc code=end
 
-export default inorderTraversal;
+export {};

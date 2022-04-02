@@ -19,4 +19,4 @@ function isPalindrome(x: number): boolean {
 }
 // @lc code=end
 
-export default isPalindrome;
+export {};

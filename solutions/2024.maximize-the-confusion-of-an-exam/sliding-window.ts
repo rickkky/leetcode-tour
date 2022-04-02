@@ -34,4 +34,4 @@ function maxConsecutiveAnswers(answerKey: string, k: number): number {
 }
 // @lc code=end
 
-export default maxConsecutiveAnswers;
+export {};

@@ -81,4 +81,4 @@ class MyLinkedList {
 }
 // @lc code=end
 
-export default MyLinkedList;
+export {};

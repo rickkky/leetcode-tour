@@ -44,4 +44,4 @@ function postorderTraversal(root: TreeNode | null): number[] {
 }
 // @lc code=end
 
-export default postorderTraversal;
+export {};

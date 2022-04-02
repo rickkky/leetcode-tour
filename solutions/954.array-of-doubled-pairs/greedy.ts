@@ -23,4 +23,4 @@ function canReorderDoubled(nums: number[]): boolean {
 }
 // @lc code=end
 
-export default canReorderDoubled;
+export {};
