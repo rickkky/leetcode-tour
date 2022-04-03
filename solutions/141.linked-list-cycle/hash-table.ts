@@ -18,17 +18,14 @@ class ListNode {
 
 // @lc code=start
 function hasCycle(head: ListNode | null): boolean {
-    if (!head) {
-        return false;
-    }
-    let slow = head;
-    let fast = head;
-    while (fast.next && fast.next.next) {
-        slow = slow.next as ListNode;
-        fast = fast.next.next;
-        if (slow === fast) {
+    const set = new Set();
+    let current: ListNode | null = head;
+    while (current) {
+        if (set.has(current)) {
             return true;
         }
+        set.add(current);
+        current = current.next;
     }
     return false;
 }
