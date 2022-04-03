@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode.cn id=141 lang=typescript
+ * @lc app=leetcode.cn id=142 lang=typescript
  *
- * https://leetcode-cn.com/problems/linked-list-cycle
+ * https://leetcode-cn.com/problems/linked-list-cycle-ii
  */
 
 /**
@@ -17,17 +17,17 @@ class ListNode {
 }
 
 // @lc code=start
-function hasCycle(head: ListNode | null): boolean {
+function detectCycle(head: ListNode | null): ListNode | null {
     const set = new Set<ListNode>();
     let current: ListNode | null = head;
     while (current) {
         if (set.has(current)) {
-            return true;
+            return current;
         }
         set.add(current);
         current = current.next;
     }
-    return false;
+    return null;
 }
 // @lc code=end
 
