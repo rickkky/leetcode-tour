@@ -39,14 +39,14 @@ function findCycleEntry(head: ListNode | null) {
     if (!encounter) {
         return null;
     }
-    let first = head as ListNode;
-    let second: ListNode | null = encounter;
-    while (second) {
-        if (first === second) {
-            return first;
+    let p1 = head as ListNode;
+    let p2: ListNode | null = encounter;
+    while (p2) {
+        if (p1 === p2) {
+            return p1;
         }
-        first = first.next as ListNode;
-        second = second.next;
+        p1 = p1.next as ListNode;
+        p2 = p2.next;
     }
     return null;
 }
