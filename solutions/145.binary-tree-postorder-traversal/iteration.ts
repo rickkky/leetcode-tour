@@ -30,7 +30,7 @@ function postorderTraversal(root: TreeNode | null): number[] {
             stack.push(current);
             current = current.left;
         }
-        current = stack.pop() as TreeNode;
+        current = stack.pop()!;
         if (!current.right || current.right === prev) {
             sequences.push(current.val);
             prev = current;

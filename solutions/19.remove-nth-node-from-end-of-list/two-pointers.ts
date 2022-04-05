@@ -24,13 +24,13 @@ function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
     // finally: right = tail
     let right = sentry;
     for (let i = 0; i < n; ++i) {
-        right = right.next as ListNode;
+        right = right.next!;
     }
     while (right.next) {
         right = right.next;
-        left = left.next as ListNode;
+        left = left.next!;
     }
-    left.next = (left.next as ListNode).next;
+    left.next = left.next!.next;
     return sentry.next;
 }
 // @lc code=end

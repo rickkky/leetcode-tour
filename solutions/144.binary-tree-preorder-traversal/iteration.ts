@@ -29,7 +29,7 @@ function preorderTraversal(root: TreeNode | null): number[] {
             stack.push(current);
             current = current.left;
         }
-        current = stack.pop() as TreeNode;
+        current = stack.pop()!;
         current = current.right;
     }
     return sequences;

@@ -28,7 +28,7 @@ class MyLinkedList {
 
     // The index is valid
     private getNodeAsc(index: number) {
-        let current = this.head as ListNode;
+        let current = this.head!;
         for (let i = 0; i < index; ++i) {
             if (!current.next) {
                 return null;
@@ -40,7 +40,7 @@ class MyLinkedList {
 
     // The index is valid
     private getNodeDesc(index: number) {
-        let current = this.tail as ListNode;
+        let current = this.tail!;
         for (let i = 0; i < this.length - 1 - index; ++i) {
             if (!current.prev) {
                 return null;
@@ -86,8 +86,8 @@ class MyLinkedList {
         } else if (index === this.length) {
             return this.addAtTail(val);
         }
-        const nextNode = this.getNode(index) as ListNode;
-        const prevNode = nextNode.prev as ListNode;
+        const nextNode = this.getNode(index)!;
+        const prevNode = nextNode.prev!;
         const node = { val, prev: prevNode, next: nextNode };
         nextNode.prev = node;
         prevNode.next = node;
@@ -99,7 +99,7 @@ class MyLinkedList {
             return;
         } else if (index === 0) {
             // delete head
-            const target = this.head as ListNode;
+            const target = this.head!;
             this.head = target.next;
             if (this.head) {
                 this.head.prev = null;
@@ -108,7 +108,7 @@ class MyLinkedList {
             }
         } else if (index === this.length - 1) {
             // delete tail
-            const target = this.tail as ListNode;
+            const target = this.tail!;
             this.tail = target.prev;
             if (this.tail) {
                 this.tail.next = null;
@@ -116,9 +116,9 @@ class MyLinkedList {
                 this.head = null;
             }
         } else {
-            const target = this.getNode(index) as ListNode;
-            const prevNode = target.prev as ListNode;
-            const nextNode = target.next as ListNode;
+            const target = this.getNode(index)!;
+            const prevNode = target.prev!;
+            const nextNode = target.next!;
             prevNode.next = nextNode;
             nextNode.prev = prevNode;
         }

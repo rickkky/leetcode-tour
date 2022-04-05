@@ -25,7 +25,7 @@ function findFirstEncounter(head: ListNode | null) {
     let slow = head;
     let fast = head;
     while (fast.next && fast.next.next) {
-        slow = slow.next as ListNode;
+        slow = slow.next!;
         fast = fast.next.next;
         if (slow === fast) {
             return slow;
@@ -39,13 +39,13 @@ function findCycleEntry(head: ListNode | null) {
     if (!encounter) {
         return null;
     }
-    let p1 = head as ListNode;
+    let p1 = head!;
     let p2: ListNode | null = encounter;
     while (p2) {
         if (p1 === p2) {
             return p1;
         }
-        p1 = p1.next as ListNode;
+        p1 = p1.next!;
         p2 = p2.next;
     }
     return null;

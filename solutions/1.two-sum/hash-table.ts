@@ -10,7 +10,7 @@ function twoSum(nums: number[], target: number): number[] {
     for (const [i, num] of nums.entries()) {
         const diff = target - num;
         if (map.has(diff)) {
-            return [map.get(diff) as number, i];
+            return [map.get(diff)!, i];
         }
         map.set(num, i);
     }

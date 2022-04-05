@@ -12,7 +12,7 @@ function canReorderDoubled(nums: number[]): boolean {
     }
     const sorted = [...map.keys()].sort((a, b) => Math.abs(a) - Math.abs(b));
     for (const num of sorted) {
-        const count1 = map.get(num) as number;
+        const count1 = map.get(num)!;
         const count2 = map.get(2 * num) || 0;
         if (count2 < count1) {
             return false;

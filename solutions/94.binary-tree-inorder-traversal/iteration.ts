@@ -28,7 +28,7 @@ function inorderTraversal(root: TreeNode | null): number[] {
             stack.push(current);
             current = current.left;
         }
-        current = stack.pop() as TreeNode;
+        current = stack.pop()!;
         sequences.push(current.val);
         current = current.right;
     }
