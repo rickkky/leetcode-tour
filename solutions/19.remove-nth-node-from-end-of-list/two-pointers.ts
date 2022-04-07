@@ -18,11 +18,11 @@ class ListNode {
 
 // @lc code=start
 function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
-    const sentry = new ListNode(0, head);
+    const dummy = new ListNode(0, head);
     // finally: left = target.prev
-    let left = sentry;
+    let left = dummy;
     // finally: right = tail
-    let right = sentry;
+    let right = dummy;
     for (let i = 0; i < n; ++i) {
         right = right.next!;
     }
@@ -31,6 +31,6 @@ function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
         left = left.next!;
     }
     left.next = left.next!.next;
-    return sentry.next;
+    return dummy.next;
 }
 // @lc code=end
