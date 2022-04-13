@@ -25,7 +25,6 @@ function addTwoNumbers(
     let current = dummy;
     let p1 = l1;
     let p2 = l2;
-    // carry - {0, 1}
     let carry = 0;
     while (p1 || p2 || carry) {
         const num1 = p1 ? p1.val : 0;
