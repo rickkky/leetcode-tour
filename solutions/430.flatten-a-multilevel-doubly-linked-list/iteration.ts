@@ -41,7 +41,6 @@ function flatten(head: Node | null): Node | null {
             curr.child = null;
         }
     }
-    // free dummy
     head.prev = null;
     return head;
 }
