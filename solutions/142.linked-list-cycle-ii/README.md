@@ -1,6 +1,6 @@
 # [142. 环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii)
 
-## [双指针法](./solution_two-pointers.ts)
+## [双指针法](./two-pointers.ts)
 
 假设链表有环，设环之前有 A 个节点，按 -A ~ -1 进行编号；环中有 B 个节点，按 0 ~ B - 1 进行编号。
 
