@@ -6,7 +6,7 @@
 
 // @lc code=start
 class DisjointSet {
-    private allies: number[] = [];
+    private parent: number[] = [];
     private count: number = 0;
 
     constructor(grid: string[][]) {
@@ -15,21 +15,21 @@ class DisjointSet {
         for (let row = 0; row < rowNum; ++row) {
             for (let col = 0; col < colNum; ++col) {
                 if (grid[row][col] === '1') {
-                    this.allies.push(row * colNum + col);
+                    this.parent.push(row * colNum + col);
                     this.count += 1;
                 } else {
-                    this.allies.push(-1);
+                    this.parent.push(-1);
                 }
             }
         }
     }
 
     find(i: number): number {
-        if (this.allies[i] !== i) {
+        if (this.parent[i] !== i) {
             // compress path
-            this.allies[i] = this.find(this.allies[i]);
+            this.parent[i] = this.find(this.parent[i]);
         }
-        return this.allies[i];
+        return this.parent[i];
     }
 
     unite(x: number, y: number): void {
@@ -38,7 +38,7 @@ class DisjointSet {
         if (rootx === rooty) {
             return;
         }
-        this.allies[rooty] = rootx;
+        this.parent[rooty] = rootx;
         this.count -= 1;
     }
 
