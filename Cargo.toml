@@ -7,4 +7,4 @@ edition = "2021"
 authors = ["rickkky <rickkky@foxmail.com>"]
 
 [workspace]
-members = ["solution-rs/*"]
+members = ["solutions/*"]
