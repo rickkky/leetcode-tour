@@ -1,0 +1,10 @@
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[package]
+name = "leetcode-tour"
+version = "0.1.0"
+edition = "2021"
+authors = ["rickkky <rickkky@foxmail.com>"]
+
+[workspace]
+members = ["solution-rs/*"]
