@@ -1,11 +1,11 @@
 /*
  * @lc app=leetcode.cn id=9 lang=typescript
  *
- * https://leetcode-cn.com/problems/palindrome-numbe
+ * https://leetcode-cn.com/problems/palindrome-number/
  */
 
 // @lc code=start
-function isPalindrome(x: number): boolean {
+export function isPalindrome(x: number): boolean {
     if (x < 0) {
         return false;
     }
@@ -18,5 +18,3 @@ function isPalindrome(x: number): boolean {
     return reversed === x;
 }
 // @lc code=end
-
-export {};

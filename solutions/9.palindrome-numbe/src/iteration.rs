@@ -1,8 +1,10 @@
 /*
  * @lc app=leetcode.cn id=9 lang=rust
  *
- * https://leetcode-cn.com/problems/palindrome-numbe
+ * https://leetcode-cn.com/problems/palindrome-number/
  */
+
+pub struct Solution;
 
 // @lc code=start
 impl Solution {
