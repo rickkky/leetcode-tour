@@ -1,5 +1,5 @@
 /*
- * @lc app=leetcode.cn id=48 lang=rust
+ * @lc app=leetcode.cn id=49 lang=rust
  *
  * https://leetcode.cn/problems/group-anagrams/
  */
