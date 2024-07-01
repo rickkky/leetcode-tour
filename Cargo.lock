@@ -11,6 +11,10 @@ name = "leetcode-tour"
 version = "0.1.0"
 
 [[package]]
+name = "longest-consecutive-sequence"
+version = "0.1.0"
+
+[[package]]
 name = "palindrome-number"
 version = "0.1.0"
 
