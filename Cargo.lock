@@ -11,6 +11,10 @@ name = "group-anagrams"
 version = "0.1.0"
 
 [[package]]
+name = "largest-rectangle-in-histogram"
+version = "0.1.0"
+
+[[package]]
 name = "leetcode-tour"
 version = "0.1.0"
 
