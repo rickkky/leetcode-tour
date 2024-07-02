@@ -14,8 +14,8 @@ impl Solution {
         let mut map = HashMap::new();
         for (i, num) in nums.iter().enumerate() {
             let diff = target - num;
-            if let Some(j) = map.get(&diff) {
-                return vec![*j as i32, i as i32];
+            if let Some(&j) = map.get(&diff) {
+                return vec![j as i32, i as i32];
             }
             map.insert(num, i);
         }
