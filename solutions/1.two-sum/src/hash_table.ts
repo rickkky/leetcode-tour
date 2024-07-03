@@ -5,7 +5,7 @@
  */
 
 // @lc code=start
-export function twoSum(nums: number[], target: number): number[] {
+function twoSum(nums: number[], target: number): number[] {
     const map: Map<number, number> = new Map();
     for (const [i, num] of nums.entries()) {
         const diff = target - num;
@@ -17,3 +17,5 @@ export function twoSum(nums: number[], target: number): number[] {
     return [];
 }
 // @lc code=end
+
+export { twoSum };
