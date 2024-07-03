@@ -7,25 +7,47 @@
 pub struct Solution;
 
 // @lc code=start
-use std::collections::HashSet;
+enum Operator {
+    Add,
+    Sub,
+    Mul,
+    Div,
+}
+
+enum Token {
+    Num(i32),
+    Op(Operator),
+}
+
+impl Token {
+    fn from_str(s: &str) -> Token {
+        match s {
+            "+" => Token::Op(Operator::Add),
+            "-" => Token::Op(Operator::Sub),
+            "*" => Token::Op(Operator::Mul),
+            "/" => Token::Op(Operator::Div),
+            _ => Token::Num(s.parse().unwrap()),
+        }
+    }
+}
 
 impl Solution {
     pub fn eval_rpn(tokens: Vec<String>) -> i32 {
-        let op_set: HashSet<&str> = ["+", "-", "*", "/"].iter().copied().collect();
         let mut num_stack = vec![];
         for token in tokens {
-            if op_set.contains(token.as_str()) {
-                let right = num_stack.pop().unwrap();
-                let left = num_stack.pop().unwrap();
-                match token.as_str() {
-                    "+" => num_stack.push(left + right),
-                    "-" => num_stack.push(left - right),
-                    "*" => num_stack.push(left * right),
-                    "/" => num_stack.push(left / right),
-                    _ => {}
+            match Token::from_str(&token) {
+                Token::Num(num) => num_stack.push(num),
+                Token::Op(op) => {
+                    let num2 = num_stack.pop().unwrap();
+                    let num1 = num_stack.pop().unwrap();
+                    let result = match op {
+                        Operator::Add => num1 + num2,
+                        Operator::Sub => num1 - num2,
+                        Operator::Mul => num1 * num2,
+                        Operator::Div => num1 / num2,
+                    };
+                    num_stack.push(result);
                 }
-            } else {
-                num_stack.push(token.parse::<i32>().unwrap());
             }
         }
         num_stack.pop().unwrap()
