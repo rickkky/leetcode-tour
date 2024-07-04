@@ -17,13 +17,11 @@ impl Solution {
             if set.contains(&(num - 1)) {
                 continue;
             }
-            let mut cur_len = 1;
             let mut cur_num = num;
             while set.contains(&(cur_num + 1)) {
-                cur_len += 1;
                 cur_num += 1;
             }
-            max_len = max_len.max(cur_len);
+            max_len = max_len.max(cur_num - num + 1);
         }
         max_len
     }
