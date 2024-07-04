@@ -31,6 +31,10 @@ name = "three-sum"
 version = "0.1.0"
 
 [[package]]
+name = "trapping-rain-water"
+version = "0.1.0"
+
+[[package]]
 name = "two-sum"
 version = "0.1.0"
 
