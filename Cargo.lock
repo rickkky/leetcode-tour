@@ -39,6 +39,10 @@ name = "permutation-in-string"
 version = "0.1.0"
 
 [[package]]
+name = "reverse-linked-list"
+version = "0.1.0"
+
+[[package]]
 name = "three-sum"
 version = "0.1.0"
 

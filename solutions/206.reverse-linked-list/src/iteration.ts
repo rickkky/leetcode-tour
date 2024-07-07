@@ -17,19 +17,17 @@ class ListNode {
 }
 
 // @lc code=start
-function reverseListRecursive(node: ListNode | null): ListNode | null {
-    if (!node || !node.next) {
-        return node;
-    }
-    const head = reverseListRecursive(node.next);
-    node.next.next = node;
-    node.next = null;
-    return head;
-}
-
 function reverseList(head: ListNode | null): ListNode | null {
-    return reverseListRecursive(head);
+    let curr: ListNode | null = head;
+    let prev: ListNode | null = null;
+    while (curr) {
+        const next = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
 }
 // @lc code=end
 
-export {};
+export { reverseList };
