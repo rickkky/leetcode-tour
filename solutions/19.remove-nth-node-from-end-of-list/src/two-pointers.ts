@@ -34,3 +34,5 @@ function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
     return dummy.next;
 }
 // @lc code=end
+
+export { removeNthFromEnd };
