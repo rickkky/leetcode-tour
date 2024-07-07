@@ -5,7 +5,7 @@
  */
 
 // @lc code=start
-export function isPalindrome(x: number): boolean {
+function isPalindrome(x: number): boolean {
     if (x < 0) {
         return false;
     }
@@ -18,3 +18,5 @@ export function isPalindrome(x: number): boolean {
     return reversed === x;
 }
 // @lc code=end
+
+export { isPalindrome };
