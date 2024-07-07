@@ -9,14 +9,18 @@ pub struct Solution;
 // @lc code=start
 impl Solution {
     pub fn is_palindrome(s: String) -> bool {
-        let s: Vec<char> = s.chars().filter(|c| c.is_alphanumeric()).collect();
+        let s: Vec<char> = s
+            .chars()
+            .filter(|c| c.is_alphanumeric())
+            .map(|c| c.to_ascii_lowercase())
+            .collect();
         if s.len() < 2 {
             return true;
         }
-        let mut i: usize = 0;
+        let mut i = 0;
         let mut j = s.len() - 1;
         while i < j {
-            if s[i].to_ascii_lowercase() != s[j].to_ascii_lowercase() {
+            if s[i] != s[j] {
                 return false;
             }
             i += 1;

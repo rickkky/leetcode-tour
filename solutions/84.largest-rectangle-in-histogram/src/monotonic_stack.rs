@@ -10,33 +10,23 @@ pub struct Solution;
 impl Solution {
     pub fn largest_rectangle_area(heights: Vec<i32>) -> i32 {
         // A monotonic stack to store the index of the height.
-        let mut stack: Vec<i32> = Vec::new();
+        let mut stack: Vec<usize> = Vec::new();
         let mut max_area = 0;
         for (i, &h) in heights.iter().enumerate() {
             // Pop the stack until the top-index height is less than the current height.
-            while stack.len() > 0 {
-                let &j = stack.last().unwrap();
-                if heights[j as usize] < h {
+            while let Some(&j) = stack.last() {
+                if h > heights[j] {
                     break;
                 }
                 stack.pop();
-                let k = if stack.len() == 0 {
-                    -1
-                } else {
-                    stack.last().unwrap().clone() as i32
-                };
-                max_area = max_area.max((i as i32 - k - 1) * heights[j as usize]);
+                let k = stack.last().map(|item| item.clone() as i32).unwrap_or(-1);
+                max_area = max_area.max((i as i32 - k - 1) * heights[j]);
             }
-            stack.push(i as i32);
+            stack.push(i);
         }
         let n = heights.len();
-        while stack.len() > 0 {
-            let j = stack.pop().unwrap();
-            let k = if stack.len() == 0 {
-                -1
-            } else {
-                stack.last().unwrap().clone() as i32
-            };
+        while let Some(j) = stack.pop() {
+            let k = stack.last().map(|item| item.clone() as i32).unwrap_or(-1);
             max_area = max_area.max((n as i32 - k - 1) * heights[j as usize]);
         }
         max_area

@@ -12,13 +12,13 @@ impl Solution {
         let mut stack = Vec::new();
         let mut trapped = 0;
         for (i, &h) in heights.iter().enumerate() {
-            while let Some(&top) = stack.last() {
-                if h < heights[top] {
+            while let Some(&j) = stack.last() {
+                if h < heights[j] {
                     break;
                 }
                 stack.pop();
-                if let Some(&prev) = stack.last() {
-                    trapped += (i - prev - 1) as i32 * (h.min(heights[prev]) - heights[top]);
+                if let Some(&k) = stack.last() {
+                    trapped += (i - k - 1) as i32 * (h.min(heights[k]) - heights[j]);
                 }
             }
             stack.push(i);
