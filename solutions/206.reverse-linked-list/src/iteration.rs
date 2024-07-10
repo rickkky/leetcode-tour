@@ -25,9 +25,9 @@ impl Solution {
     pub fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         let mut curr = head;
         let mut prev = None;
-        while let Some(mut node) = curr.take() {
-            let next = node.next.take();
-            node.next = prev.take();
+        while let Some(mut node) = curr {
+            let next = node.next;
+            node.next = prev;
             prev = Some(node);
             curr = next;
         }

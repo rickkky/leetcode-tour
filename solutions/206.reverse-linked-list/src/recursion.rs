@@ -28,7 +28,7 @@ impl Solution {
     ) -> Option<Box<ListNode>> {
         match curr {
             Some(mut curr) => {
-                let next = curr.next.take();
+                let next = curr.next;
                 curr.next = prev;
                 Self::reverse_list_recursive(next, Some(curr))
             }
