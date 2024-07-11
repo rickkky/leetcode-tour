@@ -23,24 +23,24 @@ impl ListNode {
 // @lc code=start
 impl Solution {
     pub fn remove_nth_from_end(head: Option<Box<ListNode>>, n: i32) -> Option<Box<ListNode>> {
-        let mut dummy = Some(Box::new(ListNode { val: 0, next: head }));
-        let mut left = &mut dummy;
-        let mut right = &left.clone();
-        for _ in 0..=n {
-            if let Some(node) = right {
-                right = &node.next;
-            } else {
-                return None;
+        let mut dummy = Box::new(ListNode { val: 0, next: head });
+        let mut left = &mut dummy as *mut Box<ListNode>;
+        let mut right = &dummy as *const Box<ListNode>;
+        unsafe {
+            for _ in 0..n {
+                if let Some(node) = &(*right).next {
+                    right = node;
+                } else {
+                    return dummy.next;
+                }
             }
+            while let Some(node) = &(*right).next {
+                right = node;
+                left = (*left).next.as_mut().unwrap();
+            }
+            (*left).next = (*left).next.as_mut().unwrap().next.take();
         }
-        while right.is_some() {
-            right = &right.as_ref().unwrap().next;
-            left = &mut left.as_mut().unwrap().next;
-        }
-        if let Some(node) = left {
-            node.next = node.next.as_mut().unwrap().next.take();
-        }
-        dummy.unwrap().next
+        dummy.next
     }
 }
 // @lc code=end
