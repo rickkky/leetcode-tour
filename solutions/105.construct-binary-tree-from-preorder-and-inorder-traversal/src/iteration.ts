@@ -19,53 +19,29 @@ class TreeNode {
 }
 
 // @lc code=start
-function buildSubTree(
-    preorder: number[],
-    inorderMap: Map<number, number>,
-    preorderLeftIndex: number,
-    preorderRightIndex: number,
-    inorderLeftIndex: number,
-    inorderRightIndex: number,
-) {
-    if (preorderLeftIndex > preorderRightIndex) {
-        return null;
-    }
-    const preorderRootIndex = preorderLeftIndex;
-    const inorderRootIndex = inorderMap.get(preorder[preorderRootIndex])!;
-    const root = new TreeNode(preorder[preorderRootIndex]);
-    const leftSubTreeSize = inorderRootIndex - inorderLeftIndex;
-    root.left = buildSubTree(
-        preorder,
-        inorderMap,
-        preorderLeftIndex + 1,
-        preorderLeftIndex + leftSubTreeSize,
-        inorderLeftIndex,
-        inorderRootIndex - 1,
-    );
-    root.right = buildSubTree(
-        preorder,
-        inorderMap,
-        preorderLeftIndex + leftSubTreeSize + 1,
-        preorderRightIndex,
-        inorderRootIndex + 1,
-        inorderRightIndex,
-    );
-    return root;
-}
-
 function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
-    const inorderMap = new Map<number, number>();
-    for (const [index, value] of inorder.entries()) {
-        inorderMap.set(value, index);
+    const root = new TreeNode(preorder[0]);
+    // Store tree nodes whose right child is not handled yet.
+    const stack: TreeNode[] = [root];
+    let inorderIndex = 0;
+    for (let i = 1; i < preorder.length; i++) {
+        let node = stack.at(-1)!;
+        if (node.val !== inorder[inorderIndex]) {
+            node.left = new TreeNode(preorder[i]);
+            stack.push(node.left);
+        } else {
+            while (
+                stack.length &&
+                stack.at(-1)!.val === inorder[inorderIndex]
+            ) {
+                node = stack.pop()!;
+                inorderIndex += 1;
+            }
+            node.right = new TreeNode(preorder[i]);
+            stack.push(node.right);
+        }
     }
-    return buildSubTree(
-        preorder,
-        inorderMap,
-        0,
-        preorder.length - 1,
-        0,
-        inorder.length - 1,
-    );
+    return root;
 }
 // @lc code=end
 
