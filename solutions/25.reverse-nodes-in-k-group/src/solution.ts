@@ -49,3 +49,5 @@ function reverseKGroup(head: ListNode | null, k: number): ListNode | null {
     return dummy.next;
 }
 // @lc code=end
+
+export { reverseKGroup };

@@ -90,3 +90,5 @@ class LRUCache {
     }
 }
 // @lc code=end
+
+export { LRUCache };

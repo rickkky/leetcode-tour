@@ -41,3 +41,5 @@ function isBalanced(root: TreeNode | null): boolean {
     return height(root) >= 0;
 }
 // @lc code=end
+
+export { isBalanced };
