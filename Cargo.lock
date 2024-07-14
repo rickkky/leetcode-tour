@@ -51,6 +51,10 @@ name = "reverse-linked-list"
 version = "0.1.0"
 
 [[package]]
+name = "reverse-nodes-in-k-group"
+version = "0.1.0"
+
+[[package]]
 name = "three-sum"
 version = "0.1.0"
 
