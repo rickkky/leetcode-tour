@@ -15,6 +15,10 @@ name = "binary-tree-level-order-traversal"
 version = "0.1.0"
 
 [[package]]
+name = "construct-binary-tree-from-preorder-and-inorder-traversal"
+version = "0.1.0"
+
+[[package]]
 name = "evaluate-reverse-polish-notation"
 version = "0.1.0"
 
