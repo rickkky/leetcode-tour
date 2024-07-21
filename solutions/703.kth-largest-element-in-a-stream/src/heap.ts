@@ -5,7 +5,7 @@
  */
 
 // @lc code=start
-class MiniHeap {
+class MinHeap {
     #data: number[] = [];
 
     #compare = (a: number, b: number) => a - b;
@@ -93,11 +93,11 @@ class MiniHeap {
 class KthLargest {
     #k: number;
 
-    #heap: MiniHeap;
+    #heap: MinHeap;
 
     constructor(k: number, nums: number[]) {
         this.#k = k;
-        this.#heap = new MiniHeap();
+        this.#heap = new MinHeap();
         for (const num of nums) {
             this.add(num);
         }
