@@ -119,5 +119,9 @@ name = "valid-parentheses"
 version = "0.1.0"
 
 [[package]]
+name = "valid-parenthesis-string"
+version = "0.1.0"
+
+[[package]]
 name = "validate-binary-search-tree"
 version = "0.1.0"
