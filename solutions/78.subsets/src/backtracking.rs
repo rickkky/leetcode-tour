@@ -25,8 +25,8 @@ impl Solution {
     }
 
     pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
-        let mut result = Vec::new();
         let mut sub = Vec::new();
+        let mut result = Vec::new();
         Self::depth_first_travel(&nums, 0, &mut sub, &mut result);
         result
     }
