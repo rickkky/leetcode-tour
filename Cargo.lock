@@ -23,6 +23,10 @@ name = "course-schedule"
 version = "0.1.0"
 
 [[package]]
+name = "course-schedule-ii"
+version = "0.1.0"
+
+[[package]]
 name = "evaluate-reverse-polish-notation"
 version = "0.1.0"
 
