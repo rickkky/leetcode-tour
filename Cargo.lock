@@ -103,6 +103,10 @@ name = "palindrome-partitioning"
 version = "0.1.0"
 
 [[package]]
+name = "palindromic-substrings"
+version = "0.1.0"
+
+[[package]]
 name = "permutation-in-string"
 version = "0.1.0"
 
