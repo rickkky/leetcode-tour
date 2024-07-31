@@ -87,6 +87,10 @@ name = "merge-intervals"
 version = "0.1.0"
 
 [[package]]
+name = "min-cost-climbing-stairs"
+version = "0.1.0"
+
+[[package]]
 name = "number-of-islands"
 version = "0.1.0"
 
