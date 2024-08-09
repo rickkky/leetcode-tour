@@ -27,6 +27,10 @@ name = "construct-binary-tree-from-preorder-and-inorder-traversal"
 version = "0.1.0"
 
 [[package]]
+name = "copy-list-with-random-pointer"
+version = "0.1.0"
+
+[[package]]
 name = "course-schedule"
 version = "0.1.0"
 

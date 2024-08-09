@@ -24,18 +24,18 @@ function copyRandomList(head: Node | null): Node | null {
         return null;
     }
     let curr: Node | null = head;
-    // clone nodes and insert into original list
+    // Clone nodes and insert into original list.
     while (curr) {
         const node: Node = new Node(curr.val);
         node.next = curr.next;
         curr.next = node;
         curr = node.next;
     }
-    // get the head node of the copy list
-    const answer = head.next;
-    // reset current pointer
+    // Get the head node of the copy list.
+    const result = head.next;
+    // Reset current pointer.
     curr = head;
-    // copy random pointers
+    // Copy random pointers.
     while (curr) {
         const copy: Node = curr.next!;
         if (curr.random) {
@@ -43,16 +43,16 @@ function copyRandomList(head: Node | null): Node | null {
         }
         curr = copy.next;
     }
-    // reset current pointer
+    // Reset current pointer.
     curr = head;
-    // set next pointers of all nodes
+    // Reset next pointers of all nodes.
     while (curr.next) {
         const next: Node = curr.next;
         curr.next = next.next;
         curr = next;
     }
-    return answer;
+    return result;
 }
 // @lc code=end
 
-export {};
+export { copyRandomList };
