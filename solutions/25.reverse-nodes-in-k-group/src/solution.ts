@@ -30,8 +30,7 @@ function reverse(head: ListNode, tail: ListNode): [ListNode, ListNode] {
 }
 
 function reverseKGroup(head: ListNode | null, k: number): ListNode | null {
-    const dummy = new ListNode(0);
-    dummy.next = head;
+    const dummy = new ListNode(0, head);
     let prev = dummy;
     while (head) {
         let tail: ListNode | null = prev;
