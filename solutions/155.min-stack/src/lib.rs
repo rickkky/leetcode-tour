@@ -1,1 +1,1 @@
-pub mod aux_stack;
+pub mod auxiliary_stack;

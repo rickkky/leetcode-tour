@@ -103,6 +103,10 @@ name = "lru-cache"
 version = "0.1.0"
 
 [[package]]
+name = "maximal-rectangle"
+version = "0.1.0"
+
+[[package]]
 name = "merge-intervals"
 version = "0.1.0"
 

@@ -7,7 +7,7 @@
 pub struct Solution;
 
 // @lc code=start
-struct MaxHeap {
+pub struct MaxHeap {
     data: Vec<i32>,
 }
 
