@@ -107,6 +107,10 @@ name = "merge-intervals"
 version = "0.1.0"
 
 [[package]]
+name = "middle-of-the-linked-list"
+version = "0.1.0"
+
+[[package]]
 name = "min-cost-climbing-stairs"
 version = "0.1.0"
 
