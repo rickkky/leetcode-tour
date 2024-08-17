@@ -127,6 +127,10 @@ name = "palindromic-substrings"
 version = "0.1.0"
 
 [[package]]
+name = "partition-list"
+version = "0.1.0"
+
+[[package]]
 name = "permutation-in-string"
 version = "0.1.0"
 
@@ -148,6 +152,10 @@ version = "0.1.0"
 
 [[package]]
 name = "reverse-linked-list"
+version = "0.1.0"
+
+[[package]]
+name = "reverse-linked-list-ii"
 version = "0.1.0"
 
 [[package]]
