@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=155 lang=typescript
  *
- * https://leetcode-cn.com/problems/min-stack
+ * https://leetcode-cn.com/problems/min-stack/
  */
 
 // @lc code=start
@@ -20,28 +20,25 @@ class MinStack {
     private head: StackNode | undefined;
 
     push(x: number): void {
-        if (!this.head) {
-            this.head = new StackNode(x, x);
-        } else {
-            this.head = new StackNode(x, Math.min(x, this.head.min), this.head);
-        }
+        this.head = new StackNode(
+            x,
+            Math.min(this.head ? this.head.min : x, x),
+            this.head,
+        );
     }
 
-    // stack is not empty
     pop(): void {
         this.head = this.head!.next;
     }
 
-    // stack is not empty
     top(): number {
         return this.head!.value;
     }
 
-    // stack is not empty
     getMin(): number {
         return this.head!.min;
     }
 }
 // @lc code=end
 
-export {};
+export { MinStack };
