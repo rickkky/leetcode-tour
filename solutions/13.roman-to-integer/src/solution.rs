@@ -1,16 +1,18 @@
 /*
  * @lc app=leetcode.cn id=13 lang=rust
  *
- * https://leetcode-cn.com/problems/roman-to-integer
+ * https://leetcode.cn/problems/roman-to-integer
  */
+
+pub struct Solution;
 
 // @lc code=start
 impl Solution {
     pub fn roman_to_int(s: String) -> i32 {
         let mut result = 0;
-        let mut last = 0;
+        let mut prev = 0;
         for c in s.chars() {
-            let current = match c {
+            let curr = match c {
                 'I' => 1,
                 'V' => 5,
                 'X' => 10,
@@ -20,12 +22,12 @@ impl Solution {
                 'M' => 1000,
                 _ => 0,
             };
-            if current > last {
-                result += current - 2 * last;
+            if curr > prev {
+                result += curr - 2 * prev;
             } else {
-                result += current;
+                result += curr;
             }
-            last = current;
+            prev = curr;
         }
         result
     }
