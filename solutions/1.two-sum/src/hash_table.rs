@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=1 lang=rust
  *
- * https://leetcode-cn.com/problems/two-sum/
+ * https://leetcode.cn/problems/two-sum/
  */
 
 pub struct Solution;

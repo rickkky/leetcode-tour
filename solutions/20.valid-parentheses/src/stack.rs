@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=20 lang=rust
  *
- * https://leetcode-cn.com/problems/valid-parentheses
+ * https://leetcode.cn/problems/valid-parentheses
  */
 
 pub struct Solution;

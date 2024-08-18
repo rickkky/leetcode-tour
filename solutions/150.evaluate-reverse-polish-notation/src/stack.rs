@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=150 lang=rust
  *
- * https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/
+ * https://leetcode.cn/problems/evaluate-reverse-polish-notation/
  */
 
 pub struct Solution;

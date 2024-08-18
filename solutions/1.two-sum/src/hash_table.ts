@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=1 lang=typescript
  *
- * https://leetcode-cn.com/problems/two-sum/
+ * https://leetcode.cn/problems/two-sum/
  */
 
 // @lc code=start

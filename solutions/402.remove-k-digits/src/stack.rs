@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=402 lang=rust
  *
- * https://leetcode-cn.com/problems/remove-k-digits/
+ * https://leetcode.cn/problems/remove-k-digits/
  */
 
 pub struct Solution;

@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=19 lang=typescript
  *
- * https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list
+ * https://leetcode.cn/problems/remove-nth-node-from-end-of-list
  */
 
 /**

@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=9 lang=rust
  *
- * https://leetcode-cn.com/problems/palindrome-number/
+ * https://leetcode.cn/problems/palindrome-number/
  */
 
 pub struct Solution;

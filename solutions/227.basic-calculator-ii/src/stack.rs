@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=227 lang=rust
  *
- * https://leetcode-cn.com/problems/basic-calculator-ii/
+ * https://leetcode.cn/problems/basic-calculator-ii/
  */
 
 pub struct Solution;

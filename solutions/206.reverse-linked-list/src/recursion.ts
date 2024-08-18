@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=206 lang=typescript
  *
- * https://leetcode-cn.com/problems/reverse-linked-list
+ * https://leetcode.cn/problems/reverse-linked-list
  */
 
 /**

@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=155 lang=typescript
  *
- * https://leetcode-cn.com/problems/min-stack/
+ * https://leetcode.cn/problems/min-stack/
  */
 
 // @lc code=start

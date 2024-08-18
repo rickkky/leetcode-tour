@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=394 lang=rust
  *
- * https://leetcode-cn.com/problems/decode-string/
+ * https://leetcode.cn/problems/decode-string/
  */
 
 pub struct Solution;

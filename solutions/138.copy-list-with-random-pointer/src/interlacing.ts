@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=138 lang=typescript
  *
- * https://leetcode-cn.com/problems/copy-list-with-random-pointer
+ * https://leetcode.cn/problems/copy-list-with-random-pointer
  */
 
 /**
