@@ -1,2 +1,2 @@
-pub mod general_solution;
+pub mod solution_general;
 pub mod stack;
