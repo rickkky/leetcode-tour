@@ -123,6 +123,10 @@ name = "merge-intervals"
 version = "0.1.0"
 
 [[package]]
+name = "merge-two-sorted-lists"
+version = "0.1.0"
+
+[[package]]
 name = "middle-of-the-linked-list"
 version = "0.1.0"
 
