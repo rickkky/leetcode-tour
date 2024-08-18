@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=2 lang=typescript
  *
- * https://leetcode-cn.com/problems/add-two-numbers
+ * https://leetcode.cn/problems/add-two-numbers/
  */
 
 /**
@@ -22,22 +22,22 @@ function addTwoNumbers(
     l2: ListNode | null,
 ): ListNode | null {
     const dummy = new ListNode();
-    let current = dummy;
+    let p = dummy;
     let p1 = l1;
     let p2 = l2;
     let carry = 0;
     while (p1 || p2 || carry) {
-        const num1 = p1 ? p1.val : 0;
-        const num2 = p2 ? p2.val : 0;
-        const sum = num1 + num2 + carry;
-        carry = Math.floor(sum / 10);
-        current.next = new ListNode(sum % 10);
-        current = current.next;
+        const n1 = p1 ? p1.val : 0;
         p1 = p1 ? p1.next : null;
+        const n2 = p2 ? p2.val : 0;
         p2 = p2 ? p2.next : null;
+        const sum = n1 + n2 + carry;
+        carry = Math.floor(sum / 10);
+        p.next = new ListNode(sum % 10);
+        p = p.next;
     }
     return dummy.next;
 }
 // @lc code=end
 
-export {};
+export { addTwoNumbers };
