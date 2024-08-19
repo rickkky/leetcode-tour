@@ -211,6 +211,10 @@ name = "simplify-path"
 version = "0.1.0"
 
 [[package]]
+name = "student-attendance-record-ii"
+version = "0.1.0"
+
+[[package]]
 name = "subsets"
 version = "0.1.0"
 
