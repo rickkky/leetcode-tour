@@ -40,7 +40,7 @@ dp[i][j][k] += dp[i - 1][j][0] + dp[i - 1][j][1]
 -   时间复杂度：$O(n)$。
 -   空间复杂度：$O(1)$。
 
-## [矩阵快速幂](./src/fast_exponentiation.rs)
+## [矩阵快速幂](./src/binary_exponentiation.rs)
 
 将 `dp[i][j][k]` 中的 `j` 和 `k` 合并，得到 `dp[i][j * 3 + k]`。可以写出状态转移方程：
 
