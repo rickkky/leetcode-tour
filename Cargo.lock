@@ -139,6 +139,10 @@ name = "min-stack"
 version = "0.1.0"
 
 [[package]]
+name = "next-greater-element-ii"
+version = "0.1.0"
+
+[[package]]
 name = "number-of-islands"
 version = "0.1.0"
 
