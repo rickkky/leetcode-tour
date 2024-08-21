@@ -171,6 +171,10 @@ name = "permutation-in-string"
 version = "0.1.0"
 
 [[package]]
+name = "remove-all-adjacent-duplicates-in-string"
+version = "0.1.0"
+
+[[package]]
 name = "remove-duplicates-from-sorted-list"
 version = "0.1.0"
 
