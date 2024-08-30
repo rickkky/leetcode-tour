@@ -1,4 +1,12 @@
-export class Heap<T> {
+/**
+ * If parent compare to child is greater than 0, will persist the sequence.
+ * If parent compare to child is less than 0, will swap the parent and child.
+ *
+ * For example:
+ * - `(a, b) => a - b`: max heap.
+ * - `(a, b) => b - a`: min heap.
+ */
+class Heap<T> {
     private data: T[] = [];
 
     private comppare: (a: T, b: T) => number;
@@ -56,13 +64,13 @@ export class Heap<T> {
             let j = i;
             if (
                 l < this.size &&
-                this.comppare(this.data[l], this.data[j]) > 0
+                this.comppare(this.data[j], this.data[l]) < 0
             ) {
                 j = l;
             }
             if (
                 r < this.size &&
-                this.comppare(this.data[r], this.data[j]) > 0
+                this.comppare(this.data[j], this.data[r]) < 0
             ) {
                 j = r;
             }
@@ -90,3 +98,5 @@ export class Heap<T> {
         [this.data[i], this.data[j]] = [this.data[j], this.data[i]];
     }
 }
+
+export { Heap };
