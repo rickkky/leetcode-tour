@@ -5,110 +5,127 @@
  */
 
 // @lc code=start
-class MinHeap {
-    #data: number[] = [];
+/**
+ * If parent compare to child is greater than 0, will persist the sequence.
+ * If parent compare to child is less than 0, will swap the parent and child.
+ *
+ * For example:
+ * - `(a, b) => a - b`: max heap.
+ * - `(a, b) => b - a`: min heap.
+ */
+class Heap<T> {
+    private data: T[] = [];
 
-    #compare = (a: number, b: number) => a - b;
+    private comppare: (a: T, b: T) => number;
 
-    get size() {
-        return this.#data.length;
-    }
-
-    constructor(data: number[] = []) {
-        this.#data = data;
+    constructor(data: T[], compare: (a: T, b: T) => number) {
+        this.data = data;
+        this.comppare = compare;
         this.heapify();
     }
 
+    get size() {
+        return this.data.length;
+    }
+
     heapify() {
-        for (let i = 0; i < this.size; i++) {
-            this.bubbleUp(i);
+        for (let i = this.size - 1; i >= 0; i--) {
+            this.siftDown(i);
         }
     }
 
     peek() {
-        return this.#data[0];
+        return this.data[0];
     }
 
-    offer(value: number) {
-        this.#data.push(value);
-        this.bubbleUp(this.size - 1);
+    push(value: T) {
+        this.data.push(value);
+        this.siftUp(this.size - 1);
     }
 
-    poll() {
+    pop(): T | undefined {
         if (this.size === 0) {
-            return null;
+            return undefined;
         }
-        const result = this.#data[0];
-        const last = this.#data.pop()!;
-        if (this.size > 0) {
-            this.#data[0] = last;
-            this.bubbleDown(0);
-        }
-        return result;
+        this.swap(0, this.size - 1);
+        const value = this.data.pop();
+        this.siftDown(0);
+        return value;
     }
 
-    bubbleUp(index: number) {
-        while (index > 0) {
-            const parentIndex = Math.floor((index - 1) / 2);
-            if (this.#compare(this.#data[index], this.#data[parentIndex]) < 0) {
-                this.swap(index, parentIndex);
-                index = parentIndex;
-            } else {
+    private siftUp(i: number) {
+        while (i > 0) {
+            const p = this.parent(i);
+            if (this.comppare(this.data[p], this.data[i]) >= 0) {
                 break;
             }
+            this.swap(i, p);
+            i = p;
         }
     }
 
-    bubbleDown(index: number) {
-        while (true) {
-            const leftIndex = index * 2 + 1;
-            const rightIndex = index * 2 + 2;
-            let findIndex = index;
+    private siftDown(i: number) {
+        while (i < this.size) {
+            const l = this.left(i);
+            const r = this.right(i);
+            let j = i;
             if (
-                leftIndex < this.size &&
-                this.#compare(this.#data[leftIndex], this.#data[findIndex]) < 0
+                l < this.size &&
+                this.comppare(this.data[j], this.data[l]) < 0
             ) {
-                findIndex = leftIndex;
+                j = l;
             }
             if (
-                rightIndex < this.size &&
-                this.#compare(this.#data[rightIndex], this.#data[findIndex]) < 0
+                r < this.size &&
+                this.comppare(this.data[j], this.data[r]) < 0
             ) {
-                findIndex = rightIndex;
+                j = r;
             }
-            if (findIndex !== index) {
-                this.swap(index, findIndex);
-                index = findIndex;
-            } else {
+            if (j === i) {
                 break;
             }
+            this.swap(i, j);
+            i = j;
         }
     }
 
-    swap(i: number, j: number) {
-        [this.#data[i], this.#data[j]] = [this.#data[j], this.#data[i]];
+    private left(i: number) {
+        return i * 2 + 1;
+    }
+
+    private right(i: number) {
+        return i * 2 + 2;
+    }
+
+    private parent(i: number) {
+        return Math.floor((i - 1) / 2);
+    }
+
+    private swap(i: number, j: number) {
+        [this.data[i], this.data[j]] = [this.data[j], this.data[i]];
     }
 }
 
 class KthLargest {
-    #k: number;
+    private k: number;
 
-    #heap: MinHeap;
+    // min heap
+    private heap: Heap<number>;
 
     constructor(k: number, nums: number[]) {
-        this.#k = k;
-        this.#heap = new MinHeap();
+        this.k = k;
+        this.heap = new Heap<number>([], (a, b) => b - a);
         for (const num of nums) {
             this.add(num);
         }
     }
 
     add(val: number): number {
-        this.#heap.offer(val);
-        if (this.#heap.size > this.#k) {
-            this.#heap.poll();
+        this.heap.push(val);
+        if (this.heap.size > this.k) {
+            this.heap.pop();
         }
-        return this.#heap.peek();
+        return this.heap.peek();
     }
 }
 // @lc code=end
