@@ -59,6 +59,10 @@ name = "decode-string"
 version = "0.1.0"
 
 [[package]]
+name = "evaluate-division"
+version = "0.1.0"
+
+[[package]]
 name = "evaluate-reverse-polish-notation"
 version = "0.1.0"
 
