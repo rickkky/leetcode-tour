@@ -9,14 +9,15 @@ pub struct Solution;
 // @lc code=start
 use std::collections::HashMap;
 
-struct DisjointSet {
+struct UnionFind {
     parent: Vec<usize>,
+
     rank: Vec<usize>,
 }
 
-impl DisjointSet {
+impl UnionFind {
     fn new(n: usize) -> Self {
-        DisjointSet {
+        UnionFind {
             parent: (0..n).collect(),
             rank: vec![1; n],
         }
@@ -56,20 +57,20 @@ impl DisjointSet {
 impl Solution {
     pub fn longest_consecutive(nums: Vec<i32>) -> i32 {
         let mut map: HashMap<i32, usize> = HashMap::new();
-        let mut set = DisjointSet::new(nums.len());
+        let mut union_find = UnionFind::new(nums.len());
         for (i, &num) in nums.iter().enumerate() {
             if map.contains_key(&num) {
                 continue;
             }
             map.insert(num, i);
             if map.contains_key(&(num - 1)) {
-                set.union(i, map[&(num - 1)]);
+                union_find.union(i, map[&(num - 1)]);
             }
             if map.contains_key(&(num + 1)) {
-                set.union(i, map[&(num + 1)]);
+                union_find.union(i, map[&(num + 1)]);
             }
         }
-        set.max_rank() as i32
+        union_find.max_rank() as i32
     }
 }
 // @lc code=end

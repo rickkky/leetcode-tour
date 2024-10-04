@@ -7,13 +7,13 @@
 pub struct Solution;
 
 // @lc code=start
-struct DisjointSet {
+struct UnionFind {
     parent: Vec<usize>,
 
     count: i32,
 }
 
-impl DisjointSet {
+impl UnionFind {
     pub fn new(grid: &Vec<Vec<char>>) -> Self {
         let rows = grid.len();
         let cols = grid[0].len();
@@ -27,7 +27,7 @@ impl DisjointSet {
                 }
             }
         }
-        DisjointSet { parent, count }
+        UnionFind { parent, count }
     }
 
     pub fn find(&mut self, x: usize) -> usize {
@@ -56,21 +56,21 @@ impl Solution {
     pub fn num_islands(grid: Vec<Vec<char>>) -> i32 {
         let rows = grid.len();
         let cols = grid[0].len();
-        let mut set = DisjointSet::new(&grid);
+        let mut union_find = UnionFind::new(&grid);
         for i in 0..rows {
             for j in 0..cols {
                 if grid[i][j] == '0' {
                     continue;
                 }
                 if i + 1 < rows && grid[i + 1][j] == '1' {
-                    set.union(i * cols + j, (i + 1) * cols + j);
+                    union_find.union(i * cols + j, (i + 1) * cols + j);
                 }
                 if j + 1 < cols && grid[i][j + 1] == '1' {
-                    set.union(i * cols + j, i * cols + j + 1);
+                    union_find.union(i * cols + j, i * cols + j + 1);
                 }
             }
         }
-        set.get_count()
+        union_find.get_count()
     }
 }
 // @lc code=end
