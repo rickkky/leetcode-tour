@@ -54,38 +54,43 @@ class LRUCache {
             node.value = value;
             this.#moveToHead(node);
             return;
+        } else {
+            const node = new DoubleLinkedNode(key, value);
+            this.#appendToHead(node, false);
+            if (this.#size > this.#capacity) {
+                this.#removeTail();
+            }
         }
-        const node = new DoubleLinkedNode(key, value);
-        this.#cache.set(key, node);
-        this.#appendToHead(node);
-        this.#size += 1;
-        if (this.#size > this.#capacity) {
-            const removed = this.#removeTail();
-            this.#cache.delete(removed.key);
+    }
+
+    #removeNode(node: DoubleLinkedNode, isMove: boolean): void {
+        node.prev!.next = node.next;
+        node.next!.prev = node.prev;
+        if (!isMove) {
+            this.#cache.delete(node.key);
             this.#size -= 1;
         }
     }
 
-    #removeNode(node: DoubleLinkedNode): void {
-        node.prev!.next = node.next;
-        node.next!.prev = node.prev;
-    }
-
-    #appendToHead(node: DoubleLinkedNode): void {
+    #appendToHead(node: DoubleLinkedNode, isMove: boolean): void {
         node.prev = this.#head;
         node.next = this.#head.next;
         this.#head.next!.prev = node;
         this.#head.next = node;
+        if (!isMove) {
+            this.#cache.set(node.key, node);
+            this.#size += 1;
+        }
     }
 
     #moveToHead(node: DoubleLinkedNode): void {
-        this.#removeNode(node);
-        this.#appendToHead(node);
+        this.#removeNode(node, true);
+        this.#appendToHead(node, true);
     }
 
     #removeTail(): DoubleLinkedNode {
         const node = this.#tail.prev!;
-        this.#removeNode(node);
+        this.#removeNode(node, false);
         return node;
     }
 }

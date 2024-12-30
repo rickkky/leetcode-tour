@@ -10,7 +10,7 @@ function swap<T>(list: T[], i: number, j: number) {
 }
 
 function medianThree(list: [number, number][], left: number, right: number) {
-    const mid = Math.floor((left + right) / 2);
+    const mid = (left + right) >> 1;
     const l = list[left][1];
     const m = list[mid][1];
     const r = list[right][1];

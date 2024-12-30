@@ -15,10 +15,10 @@ impl Solution {
             let mut sub = vec![];
             let mut duplicated = false;
             for i in 0..nums.len() {
-                if mask & 1 << i == 0 {
+                if mask & (1 << i) == 0 {
                     continue;
                 }
-                if i > 0 && nums[i - 1] == nums[i] && mask & 1 << i - 1 == 0 {
+                if i > 0 && nums[i - 1] == nums[i] && mask & (1 << i - 1) == 0 {
                     duplicated = true;
                     break;
                 }

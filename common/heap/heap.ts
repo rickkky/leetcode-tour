@@ -27,7 +27,7 @@ class Heap<T> {
         }
     }
 
-    peek() {
+    peek(): T | undefined {
         return this.data[0];
     }
 

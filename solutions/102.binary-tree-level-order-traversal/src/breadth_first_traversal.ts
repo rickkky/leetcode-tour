@@ -9,31 +9,29 @@
  */
 class TreeNode {
     val: number;
-    left: TreeNode | undefined;
-    right: TreeNode | undefined;
-    constructor(val?: number, left?: TreeNode, right?: TreeNode) {
+    left: TreeNode | null;
+    right: TreeNode | null;
+    constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
         this.val = val === undefined ? 0 : val;
-        this.left = left === undefined ? undefined : left;
-        this.right = right === undefined ? undefined : right;
+        this.left = left === undefined ? null : left;
+        this.right = right === undefined ? null : right;
     }
 }
 
 // @lc code=start
-function levelOrder(root: TreeNode | undefined): number[][] {
+function levelOrder(root: TreeNode | null): number[][] {
     if (!root) {
         return [];
     }
-    // a queue to store unhandled nodes
+    const ret: number[][] = [];
+    // Store unhandled nodes.
     const queue: TreeNode[] = [root];
-    const result: number[][] = [];
     while (queue.length > 0) {
-        // store the sequences of the current level
-        const sequences: number[] = [];
-        // number of nodes in the current level
-        const length = queue.length;
-        for (let i = 0; i < length; ++i) {
-            const node = queue.shift() as TreeNode;
-            sequences.push(node.val);
+        const seq: number[] = [];
+        const len = queue.length;
+        for (let i = 0; i < len; ++i) {
+            const node = queue.shift()!;
+            seq.push(node.val);
             if (node.left) {
                 queue.push(node.left);
             }
@@ -41,9 +39,9 @@ function levelOrder(root: TreeNode | undefined): number[][] {
                 queue.push(node.right);
             }
         }
-        result.push(sequences);
+        ret.push(seq);
     }
-    return result;
+    return ret;
 }
 // @lc code=end
 

@@ -34,7 +34,7 @@ class Heap<T> {
         }
     }
 
-    peek() {
+    peek(): T | undefined {
         return this.data[0];
     }
 
@@ -123,14 +123,14 @@ class MedianFinder {
 
     addNum(num: number): void {
         if (this.maxHeap.size === this.minHeap.size) {
-            if (this.minHeap.size === 0 || num <= this.minHeap.peek()) {
+            if (this.minHeap.size === 0 || num <= this.minHeap.peek()!) {
                 this.maxHeap.push(num);
             } else {
                 this.maxHeap.push(this.minHeap.pop()!);
                 this.minHeap.push(num);
             }
         } else {
-            if (num >= this.maxHeap.peek()) {
+            if (num >= this.maxHeap.peek()!) {
                 this.minHeap.push(num);
             } else {
                 this.minHeap.push(this.maxHeap.pop()!);
@@ -141,9 +141,9 @@ class MedianFinder {
 
     findMedian(): number {
         if (this.maxHeap.size === this.minHeap.size) {
-            return (this.maxHeap.peek() + this.minHeap.peek()) / 2;
+            return (this.maxHeap.peek()! + this.minHeap.peek()!) / 2;
         } else {
-            return this.maxHeap.peek();
+            return this.maxHeap.peek()!;
         }
     }
 }

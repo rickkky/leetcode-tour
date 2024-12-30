@@ -9,7 +9,7 @@ pub struct Solution;
 // @lc code=start
 impl Solution {
     pub fn median_three(nums: &[i32], left: usize, right: usize) -> usize {
-        let mid = left + (right - left) / 2;
+        let mid = left + right / 2;
         let l = nums[left];
         let m = nums[mid];
         let r = nums[right];
@@ -40,7 +40,7 @@ impl Solution {
         i
     }
 
-    // Find the kth (0-indexed) smallest element in the array.
+    // Find the kth (0-indexed) smallest element.
     pub fn quick_select(mut nums: Vec<i32>, k: usize) -> i32 {
         let mut left = 0;
         let mut right = nums.len() - 1;

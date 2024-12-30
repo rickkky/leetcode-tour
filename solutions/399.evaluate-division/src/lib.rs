@@ -1,2 +1,2 @@
-pub mod depth_first_search;
+pub mod depth_first_traversal;
 pub mod union_find;

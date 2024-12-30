@@ -8,26 +8,20 @@ pub struct Solution;
 
 // @lc code=start
 impl Solution {
-    fn depth_first_travel(
-        nums: &Vec<i32>,
-        curr: usize,
-        sub: &mut Vec<i32>,
-        result: &mut Vec<Vec<i32>>,
-    ) {
+    fn backtrack(nums: &Vec<i32>, curr: usize, seq: &mut Vec<i32>, result: &mut Vec<Vec<i32>>) {
         if curr == nums.len() {
-            result.push(sub.clone());
+            result.push(seq.clone());
             return;
         }
-        Self::depth_first_travel(nums, curr + 1, sub, result);
-        sub.push(nums[curr]);
-        Self::depth_first_travel(nums, curr + 1, sub, result);
-        sub.pop();
+        Self::backtrack(nums, curr + 1, seq, result);
+        seq.push(nums[curr]);
+        Self::backtrack(nums, curr + 1, seq, result);
+        seq.pop();
     }
 
     pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
-        let mut sub = Vec::new();
-        let mut result = Vec::new();
-        Self::depth_first_travel(&nums, 0, &mut sub, &mut result);
+        let mut result = vec![];
+        Self::backtrack(&nums, 0, &mut vec![], &mut result);
         result
     }
 }

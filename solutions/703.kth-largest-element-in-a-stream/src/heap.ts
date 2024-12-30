@@ -34,7 +34,7 @@ class Heap<T> {
         }
     }
 
-    peek() {
+    peek(): T | undefined {
         return this.data[0];
     }
 
@@ -125,7 +125,7 @@ class KthLargest {
         if (this.heap.size > this.k) {
             this.heap.pop();
         }
-        return this.heap.peek();
+        return this.heap.peek()!;
     }
 }
 // @lc code=end

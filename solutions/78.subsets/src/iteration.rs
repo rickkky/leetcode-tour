@@ -13,7 +13,7 @@ impl Solution {
         for mask in 0..1 << nums.len() {
             let mut sub = vec![];
             for i in 0..nums.len() {
-                if mask & 1 << i == 0 {
+                if mask & (1 << i) == 0 {
                     continue;
                 }
                 sub.push(nums[i]);

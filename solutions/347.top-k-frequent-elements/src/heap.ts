@@ -34,7 +34,7 @@ class Heap<T> {
         }
     }
 
-    peek() {
+    peek(): T | undefined {
         return this.data[0];
     }
 
@@ -115,12 +115,12 @@ function topKFrequent(nums: number[], k: number): number[] {
     for (const num of nums) {
         freq.set(num, (freq.get(num) || 0) + 1);
     }
-    // min heap
+    // Min heap.
     const heap = new Heap<[number, number]>([], (a, b) => b[1] - a[1]);
     for (const [num, count] of freq) {
         if (heap.size < k) {
             heap.push([num, count]);
-        } else if (count > heap.peek()[1]) {
+        } else if (count > heap.peek()![1]) {
             heap.pop();
             heap.push([num, count]);
         }
