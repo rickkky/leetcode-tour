@@ -1,8 +1,10 @@
 /*
  * @lc app=leetcode.cn id=28 lang=rust
  *
- * https://leetcode-cn.com/problems/implement-strstr
+ * https://leetcode.cn/problems/implement-strstr/
  */
+
+pub struct Solution;
 
 // @lc code=start
 impl Solution {
@@ -10,10 +12,12 @@ impl Solution {
         if needle.is_empty() {
             return 0;
         }
+        let haystack: Vec<char> = haystack.chars().collect();
+        let needle: Vec<char> = needle.chars().collect();
         let mut i = 0;
         let mut j = 0;
         while i < haystack.len() {
-            if haystack.as_bytes()[i] == needle.as_bytes()[j] {
+            if haystack[i] == needle[j] {
                 i += 1;
                 j += 1;
             } else {

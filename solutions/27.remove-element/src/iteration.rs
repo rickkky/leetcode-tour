@@ -1,8 +1,10 @@
 /*
  * @lc app=leetcode.cn id=27 lang=rust
  *
- * https://leetcode-cn.com/problems/remove-element
+ * https://leetcode.cn/problems/remove-element/
  */
+
+pub struct Solution;
 
 // @lc code=start
 impl Solution {

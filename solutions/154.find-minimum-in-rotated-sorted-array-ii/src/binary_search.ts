@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode.cn id=153 lang=typescript
+ * @lc app=leetcode.cn id=154 lang=typescript
  *
- * https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/
+ * https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array-ii/
  */
 
 // @lc code=start
@@ -10,13 +10,12 @@ function findMin(nums: number[]): number {
     let right = nums.length - 1;
     while (left < right) {
         const mid = (left + right) >> 1;
-        if (nums[left] < nums[mid] && nums[mid] < nums[right]) {
-            return nums[left];
-        }
         if (nums[mid] < nums[right]) {
             right = mid;
-        } else {
+        } else if (nums[mid] > nums[right]) {
             left = mid + 1;
+        } else {
+            right -= 1;
         }
     }
     return nums[left];
