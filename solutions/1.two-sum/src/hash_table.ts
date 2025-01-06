@@ -8,9 +8,9 @@
 function twoSum(nums: number[], target: number): number[] {
     const map: Map<number, number> = new Map();
     for (const [i, num] of nums.entries()) {
-        const diff = target - num;
-        if (map.has(diff)) {
-            return [map.get(diff)!, i];
+        const patch = target - num;
+        if (map.has(patch)) {
+            return [map.get(patch)!, i];
         }
         map.set(num, i);
     }

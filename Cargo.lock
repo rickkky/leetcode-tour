@@ -271,11 +271,19 @@ name = "remove-k-digits"
 version = "0.1.0"
 
 [[package]]
+name = "remove-linked-list-elements"
+version = "0.1.0"
+
+[[package]]
 name = "remove-nth-node-from-end-of-list"
 version = "0.1.0"
 
 [[package]]
 name = "reorder-list"
+version = "0.1.0"
+
+[[package]]
+name = "reverse-integer"
 version = "0.1.0"
 
 [[package]]
@@ -292,6 +300,10 @@ version = "0.1.0"
 
 [[package]]
 name = "roman-to-integer"
+version = "0.1.0"
+
+[[package]]
+name = "rotate-list"
 version = "0.1.0"
 
 [[package]]
@@ -348,6 +360,10 @@ version = "0.1.0"
 
 [[package]]
 name = "two-sum"
+version = "0.1.0"
+
+[[package]]
+name = "two-sum-ii-input-array-is-sorted"
 version = "0.1.0"
 
 [[package]]

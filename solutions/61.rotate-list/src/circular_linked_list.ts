@@ -1,12 +1,9 @@
 /*
  * @lc app=leetcode.cn id=61 lang=typescript
  *
- * https://leetcode-cn.com/problems/rotate-list
+ * https://leetcode.cn/problems/rotate-list/
  */
 
-/**
- * Definition for singly-linked list.
- */
 class ListNode {
     val: number;
     next: ListNode | null;
@@ -23,27 +20,27 @@ function rotateRight(head: ListNode | null, k: number): ListNode | null {
     }
     let curr = head;
     let count = 1;
-    // find tail node and count length
+    // Find the tail node and count the length of the list.
     while (curr.next) {
         curr = curr.next;
         count += 1;
     }
-    // make list cycle
+    // Make the list circular.
     curr.next = head;
-    // reset current pointer
+    // Reset curr pointer to head.
     curr = head;
-    // the index of the new tail node from head
+    // Compute the index of the new tail node.
     const index = count - 1 - (k % count);
-    // find the new tail node
+    // Find the new tail node.
     for (let i = 0; i < index; ++i) {
         curr = curr.next as ListNode;
     }
-    // get the new head
-    const result = curr.next;
-    // break the cycle list
+    // Get the new head.
+    const ret = curr.next;
+    // Break the circular link.
     curr.next = null;
-    return result;
+    return ret;
 }
 // @lc code=end
 
-export {};
+export { rotateRight };

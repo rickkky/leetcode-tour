@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=203 lang=typescript
  *
- * https://leetcode-cn.com/problems/remove-linked-list-elements
+ * https://leetcode.cn/problems/remove-linked-list-elements/
  */
 
 /**
@@ -19,16 +19,16 @@ class ListNode {
 // @lc code=start
 function removeElements(head: ListNode | null, val: number): ListNode | null {
     const dummy = new ListNode(0, head);
-    let current = dummy;
-    while (current.next) {
-        if (current.next.val === val) {
-            current.next = current.next.next;
+    let curr = dummy;
+    while (curr.next) {
+        if (curr.next.val === val) {
+            curr.next = curr.next.next;
         } else {
-            current = current.next;
+            curr = curr.next;
         }
     }
     return dummy.next;
 }
 // @lc code=end
 
-export {};
+export { removeElements };

@@ -1,12 +1,9 @@
 /*
  * @lc app=leetcode.cn id=61 lang=typescript
  *
- * https://leetcode-cn.com/problems/rotate-list
+ * https://leetcode.cn/problems/rotate-list/
  */
 
-/**
- * Definition for singly-linked list.
- */
 class ListNode {
     val: number;
     next: ListNode | null;
@@ -22,29 +19,28 @@ function rotateRight(head: ListNode | null, k: number): ListNode | null {
         return null;
     }
     const dummy = new ListNode(0, head);
-    // fulfilled: original tail
+    // Finally points to the original tail.
     let p1 = dummy;
-    // fulfilled: new tail
+    // Finally points to the new tail.
     let p2 = dummy;
+    // Firstly, p1 moves k steps.
+    // The actual valid number of steps is k % n.
     for (let i = 0; i < k; ++i) {
         p1 = p1.next!;
-        // If p1 points to the original tail after this for-loop,
-        // p2 will point to dummy node finally.
-        // The dummy node cannot be the new tail node,
-        // so we need to skip this case.
         if (!p1.next) {
             p1 = dummy;
         }
     }
+    // Then, p1 and p2 move n - (k % n) steps until p1 reaches the end.
     while (p1.next) {
         p1 = p1.next;
         p2 = p2.next!;
     }
-    const result = p2.next || head;
+    const ret = p2.next || head;
     p1.next = head;
     p2.next = null;
-    return result;
+    return ret;
 }
 // @lc code=end
 
-export {};
+export { rotateRight };
