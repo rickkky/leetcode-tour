@@ -1,5 +1,5 @@
 /*
- * @lc app=leetcode.cn id=74 lang=javascript
+ * @lc app=leetcode.cn id=74 lang=typescript
  *
  * https://leetcode.cn/problems/search-a-2d-matrix/
  */

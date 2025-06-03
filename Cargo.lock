@@ -127,6 +127,10 @@ name = "insert-interval"
 version = "0.1.0"
 
 [[package]]
+name = "integer-to-roman"
+version = "0.1.0"
+
+[[package]]
 name = "intersection-of-two-linked-lists"
 version = "0.1.0"
 
@@ -152,6 +156,10 @@ version = "0.1.0"
 
 [[package]]
 name = "leetcode-tour"
+version = "0.1.0"
+
+[[package]]
+name = "letter-combinations-of-a-phone-number"
 version = "0.1.0"
 
 [[package]]
@@ -247,6 +255,10 @@ name = "permutation-in-string"
 version = "0.1.0"
 
 [[package]]
+name = "regular-expression-matching"
+version = "0.1.0"
+
+[[package]]
 name = "remove-all-adjacent-duplicates-in-string"
 version = "0.1.0"
 
@@ -331,6 +343,10 @@ name = "sqrtx"
 version = "0.1.0"
 
 [[package]]
+name = "string-to-integer-atoi"
+version = "0.1.0"
+
+[[package]]
 name = "student-attendance-record-ii"
 version = "0.1.0"
 
@@ -348,6 +364,10 @@ version = "0.1.0"
 
 [[package]]
 name = "three-sum"
+version = "0.1.0"
+
+[[package]]
+name = "three-sum-closest"
 version = "0.1.0"
 
 [[package]]

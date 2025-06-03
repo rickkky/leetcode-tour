@@ -7,11 +7,10 @@ pub struct Solution;
 
 // @lc code=start
 impl Solution {
-    pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
-        let mut nums = nums.clone();
+    pub fn three_sum(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
         nums.sort_unstable();
-        let mut result = Vec::new();
-        for i in 0..nums.len() {
+        let mut ret = Vec::new();
+        for i in 0..nums.len() - 2 {
             if i > 0 && nums[i] == nums[i - 1] {
                 continue;
             }
@@ -20,23 +19,29 @@ impl Solution {
             while j < k {
                 let sum = nums[i] + nums[j] + nums[k];
                 if sum == 0 {
-                    result.push(vec![nums[i], nums[j], nums[k]]);
+                    ret.push(vec![nums[i], nums[j], nums[k]]);
                     while j < k && nums[j] == nums[j + 1] {
                         j += 1;
                     }
+                    j += 1;
                     while j < k && nums[k] == nums[k - 1] {
                         k -= 1;
                     }
-                    j += 1;
                     k -= 1;
                 } else if sum < 0 {
+                    while j < k && nums[j] == nums[j + 1] {
+                        j += 1;
+                    }
                     j += 1;
                 } else {
+                    while j < k && nums[k] == nums[k - 1] {
+                        k -= 1;
+                    }
                     k -= 1;
                 }
             }
         }
-        result
+        ret
     }
 }
 // @lc code=end
